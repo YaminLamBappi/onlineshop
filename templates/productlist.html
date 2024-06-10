@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/list.css' %}">
+</head>
+
+<body>
+    {% include 'header.html' %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="categories">
+                    <h2>Categories</h2>
+                    <ul class="list-group">
+                        <li class="list-group-item"><a href="{% url 'shop:product_list' %}">All</a></li>
+                        {% for category in categories %}
+                        <li class="list-group-item">
+                            <a href="{% url 'shop:product_list_by_category' category.slug %}">
+                                {{ category.name }} ({{ category.products.count }})
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-9">
+
+                <div class="product-list row">
+                    {% for product in products %}
+                    <div class="product col-md-4">
+                        <div class="card">
+                            {% if product.image %}
+                            <a href="{% url 'shop:product_detail' product.id product.slug %}">
+                                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="card-img-top">
+                            </a>
+                            {% else %}
+                            <!-- Display a default image or a message indicating no image is available -->
+                            <img src="{% static 'no-image.png' %}" alt="No image available" class="card-img-top">
+                            {% endif %}
+                            <div class="card-body">
+                                <h5 class="card-title">{{ product.name }}</h5>
+                                <p class="card-text">Price: ${{ product.price }}</p>
+                                <a href="{% url 'shop:product_detail' product.id product.slug %}"
+                                    class="btn btn-primary">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <div class="pagination">
+                    {% if products.has_previous %}
+                    <a href="{% url 'shop:product_list' %}?page={{ products.previous_page_number }}">Previous</a>
+                    {% endif %}
+                    <span>Page {{ products.number }} of {{ products.paginator.num_pages }}</span>
+                    {% if products.has_next %}
+                    <a href="{% url 'shop:product_list' %}?page={{ products.next_page_number }}">Next</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

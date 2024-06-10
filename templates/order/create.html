@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Order</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/create.css' %}">
+</head>
+
+<body>
+    {% include 'header.html' %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h1 class="card-title text-center mb-4">Place Order</h1>
+                        <h2 class="card-subtitle text-center mb-4">Your Cart</h2>
+                        <ul class="list-group mb-4">
+                            {% for item in cart %}
+                            <li class="list-group-item d-flex justify-content-between">
+                                <img src="{{ item.product.image.url }}" alt="Product Image" width="50" height="50"
+                                    class="mr-2 rounded">
+                                <span>{{ item.product.name }}</span>
+                                <span>x {{ item.quantity }} ({{ item.price }})</span>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        <p class="card-text text-center mb-4">Total: ${{ cart.get_total_price }}</p>
+                        <form method="post">
+                            {% csrf_token %}
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="first_name">First Name:</label>
+                                        {{ form.first_name }}
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="phone">Phone Number:</label>
+                                        {{ form.phone }}
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="address">Address:</label>
+                                        {{ form.address }}
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="last_name">Last Name:</label>
+                                        {{ form.last_name }}
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="city">City:</label>
+                                        {{ form.city }}
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="postal_code">Postal Code:</label>
+                                        {{ form.postal_code }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h4>Payment Method</h4>
+                            <ul class="wc_payment_methods payment_methods methods">
+                                <li class="wc_payment_method payment_method_cod">
+                                    <input id="payment_method_cod" type="radio" class="input-radio"
+                                        name="payment_method" value="cod" checked="checked">
+
+                                    <label for="payment_method_cod">
+                                        Cash on delivery <img
+                                            src="https://easyfashion.com.bd/wp-content/uploads/2022/04/cash-on-delivery-icon-13-e1650309190354.png"
+                                            alt="Cash on Delivery">
+                                    </label>
+
+                                </li>
+
+                            </ul>
+
+                            <button type="submit" class="btn btn-primary btn-block">Place Order</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
