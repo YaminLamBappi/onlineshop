@@ -6,27 +6,32 @@
 <head>
     <meta charset="utf-8">
     <title>OnlineShop</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
-
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
 </head>
 
-{% block content %}
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <div class="login-container">
-                <h2 class="text-center">Login</h2>
-                <form method="post">
-                    {% csrf_token %}
-                    {{ form.as_p }}
-                    <button type="submit" class="btn btn-primary btn-block">Log In</button>
-                    <a href="{% url 'register' %}">Register Now</a>
-                </form>
+<body class="bg-gray-50">
+    <a href="{% url 'shop:product_list' %}">
+        <h2>Back</h2>
+    </a>
 
-            </div>
+    {% block content %}
+    <div class="flex justify-center items-center h-screen">
+        <div class="max-w-sm w-full p-8 bg-white shadow-md rounded-md">
+            <h2 class="text-2xl font-semibold mb-6 text-center">Login</h2>
+            <form method="post" class="space-y-4">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit"
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md w-full">Log
+                    In</button>
+            </form>
+            <p class="mt-4 text-center text-gray-600">Don't have an account?
+                <a href="{% url 'register' %}" class="text-blue-500 hover:text-blue-700">Sign Up</a>
+            </p>
         </div>
     </div>
-</div>
-{% endblock %}
+    {% endblock %}
+</body>
 
 </html>
