@@ -44,7 +44,7 @@ def edit_profile(request):
 
 def register(request):
     if request.method == 'POST':
-        form = CustomUserCreationForm(request.POST)
+        form = CustomUserCreationForm(request.POST, request.FILES)
         if form.is_valid():
             username = form.cleaned_data['username']
             if CustomUser.objects.filter(username=username).exists():

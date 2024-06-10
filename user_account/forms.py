@@ -1,14 +1,21 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from .models import CustomUser
-from phone_field import PhoneField
 
 class CustomUserCreationForm(UserCreationForm):
-    phone = PhoneField( help_text='Contact phone number')
+    profile_pic = forms.ImageField(required=False)  # Add this field for the profile picture
 
     class Meta:
         model = CustomUser
-        fields = [ 'username', 'email', 'phone', 'password1', 'password2']
+        fields = ['username', 'profile_pic', 'phone', 'password1', 'password2']
+
+    def save(self, commit=True):
+        user = super().save(commit=False)
+        user.profile_pic = self.cleaned_data['profile_pic']  # Save the profile picture
+        if commit:
+            user.save()
+        return user
+
 
 class ProfileForm(forms.ModelForm):
     class Meta:
