@@ -177,16 +177,3 @@ This project is licensed under the MIT License. See the LICENSE file for more de
 
 markdown
 
-
-### Explanation
-
-1. **Introduction**: Provides a brief overview of the project.
-2. **Table of Contents**: Helps navigate through the README.
-3. **Features**: Lists the key features of the project.
-4. **Technologies**: Lists the technologies used in the project.
-5. **Installation**: Detailed steps to set up the project locally, including prerequisites and commands.
-6. **Configuration**: Instructions for setting up environment variables and configuring static files.
-7. **Usage**: Instructions to run the development server and access the site.
-8. **Running Tests**: Commands to run the tests.
-9. **Contributing**: Guidelines for contributing to the project.
-10. **License**: Licensing information for the project.
