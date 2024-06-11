@@ -22,4 +22,4 @@ class ProfileForm(forms.ModelForm):
         model = CustomUser  
         fields = [
             'first_name', 'last_name', 'email', 
-            'phone', 'bio', 'profile_pic']
+            'phone', 'address','postal_code','city', 'profile_pic']

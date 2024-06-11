@@ -2,18 +2,24 @@ from django.db import models
 from shop.models import Product
 
 class Order(models.Model):
+    PAYMENT_CHOICES = [
+        ('COD', 'Cash on Delivery'),
+        ('Bkash', 'Bkash'),
+        ('Credit Card', 'Credit Card'),
+    ]
+
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     phone = models.CharField(max_length=20, blank=False)
     address = models.CharField(max_length=250)
     postal_code = models.CharField(max_length=20)
     city = models.CharField(max_length=100)
-    created = models.DateTimeField(auto_now_add=True)
+    order_placed = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
-    paid = models.BooleanField(default=False)
+    payment = models.CharField(max_length=20, choices=PAYMENT_CHOICES, default='COD')
 
     class Meta:
-        ordering = ('-created',)
+        ordering = ('-order_placed',)
 
     def __str__(self):
         return f'Order {self.id}'

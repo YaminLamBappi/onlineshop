@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -66,25 +65,13 @@
                                         <label for="postal_code">Postal Code:</label>
                                         {{ form.postal_code }}
                                     </div>
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="payment">Payment Method:</label>
+                                    {{ form.payment }}
                                 </div>
                             </div>
-
-                            <h4>Payment Method</h4>
-                            <ul class="wc_payment_methods payment_methods methods">
-                                <li class="wc_payment_method payment_method_cod">
-                                    <input id="payment_method_cod" type="radio" class="input-radio"
-                                        name="payment_method" value="cod" checked="checked">
-
-                                    <label for="payment_method_cod">
-                                        Cash on delivery <img
-                                            src="https://easyfashion.com.bd/wp-content/uploads/2022/04/cash-on-delivery-icon-13-e1650309190354.png"
-                                            alt="Cash on Delivery">
-                                    </label>
-
-                                </li>
-
-                            </ul>
-
                             <button type="submit" class="btn btn-primary btn-block">Place Order</button>
                         </form>
                     </div>

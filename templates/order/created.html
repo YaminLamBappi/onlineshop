@@ -1,11 +1,13 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Order Created</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
 </head>
+
 <body>
     <div class="container">
         <h1>Thank you for your order!</h1>
@@ -13,7 +15,8 @@
         <p>Order ID: {{ order.id }}</p>
         <a href="{% url 'shop:product_list' %}" class="btn btn-primary">Continue Shopping</a>
 
-        
+
     </div>
 </body>
+
 </html>
