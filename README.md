@@ -161,7 +161,7 @@ bash
 
 python manage.py test
 
-Contributing
+Contributing: Yamin Lam Bappi
 
 Contributions are welcome! Please follow these steps:
 
@@ -175,5 +175,5 @@ License
 
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
-markdown
+
 
