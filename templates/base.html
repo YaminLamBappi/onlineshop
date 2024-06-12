@@ -1,33 +1,36 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html>
-
+<html class="dark-mode">
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <title>{% block title %} Product List {% endblock %}</title>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
 </head>
 
-
-
-
-
-
 <body>
+    <!-- Header -->
     {% include 'header.html' %}
 
-    {% block content %}{% endblock %}
+    <!-- Main content -->
+    <div class="container mx-auto px-4 py-8">
+        {% block content %}{% endblock %}
+    </div>
 
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- JavaScript for theme toggle -->
+    <script>
+        const themeToggleBtn = document.getElementById('theme-toggle');
 
+        themeToggleBtn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark-mode');
+            document.documentElement.classList.toggle('light-mode');
+        });
+
+    </script>
 </body>
 
 </html>
