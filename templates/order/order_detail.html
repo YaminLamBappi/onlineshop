@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+
+
+
+{% block content %}
+<div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-6">Order {{ order.id }}</h1>
+    <div class="bg-white shadow rounded-lg p-6">
+        <p class="mb-4"><span class="font-semibold">Placed on:</span> {{ order.order_placed|date:"M d, Y H:i" }}</p>
+        <p class="mb-4"><span class="font-semibold">Updated on:</span> {{ order.updated|date:"M d, Y H:i" }}</p>
+        <p class="mb-4"><span class="font-semibold">First Name:</span> {{ order.first_name }}</p>
+        <p class="mb-4"><span class="font-semibold">Last Name:</span> {{ order.last_name }}</p>
+        <p class="mb-4"><span class="font-semibold">Phone:</span> {{ order.phone }}</p>
+        <p class="mb-4"><span class="font-semibold">Address:</span> {{ order.address }}</p>
+        <p class="mb-4"><span class="font-semibold">Postal Code:</span> {{ order.postal_code }}</p>
+        <p class="mb-4"><span class="font-semibold">City:</span> {{ order.city }}</p>
+        <p class="mb-4"><span class="font-semibold">Payment Method:</span> {{ order.get_payment_display }}</p>
+        <p class="mb-4"><span class="font-semibold">Status:</span>
+            <span
+                class="inline-block px-2 py-1 rounded-full text-red-500 {% if order.status == 'Pending' %} bg-yellow-500 {% elif order.status == 'Processing' %} bg-blue-500 {% elif order.status == 'Shipped' %} bg-indigo-500 {% elif order.status == 'Delivered' %} bg-green-500 {% elif order.status == 'Cancelled' %} bg-red-500 {% endif %}">
+                {{ order.get_status_display }}
+            </span>
+        </p>
+    </div>
+    <a href="{% url 'order:order_history' %}" class="btn-update-password">Back to Order</a>
+</div>
+{% endblock %}

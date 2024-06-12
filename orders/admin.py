@@ -2,9 +2,11 @@ from django.contrib import admin
 from .models import Order, OrderItem
 
 class OrderAdmin(admin.ModelAdmin):
-    list_display = ('id', 'first_name', 'last_name','phone' ,'address', 'city', 'postal_code', 'order_placed', 'payment')
-    list_filter = ('payment', 'order_placed', 'updated')
-    search_fields = ('id', 'first_name', 'last_name', 'email')
+    list_display = ('id', 'user', 'order_placed', 'status', 'payment')
+    list_filter = ('status', 'payment', 'order_placed')
+    search_fields = ('id', 'user__username', 'first_name', 'last_name')
+    list_editable = ('status',)
+
 
 class OrderItemAdmin(admin.ModelAdmin):
     list_display = ('id', 'order', 'product', 'quantity', 'price')

@@ -1,6 +1,5 @@
-from django.shortcuts import render, redirect
-from django.urls import reverse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
 from .models import Order
 from .models import OrderItem
 from .forms import OrderCreateForm
@@ -43,3 +42,14 @@ def order_create(request):
 def order_created(request, order_id):
     order = get_object_or_404(Order, id=order_id)
     return render(request, 'order/created.html', {'order': order})
+
+
+@login_required
+def order_history(request):
+    orders = request.user.orders.all()
+    return render(request, 'order/order_history.html', {'orders': orders})
+
+@login_required
+def order_detail(request, order_id):
+    order = get_object_or_404(Order, id=order_id, user=request.user)
+    return render(request, 'order/order_detail.html', {'order': order})

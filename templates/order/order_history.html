@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-6">Order History</h1>
+    <ul class="space-y-4">
+        {% for order in orders %}
+        <li class="bg-white shadow rounded-lg p-4">
+            <a href="{% url 'order:order_detail' order.id %}" class="text-blue-600 hover:text-blue-800 font-semibold">
+                Order {{ order.id }}
+            </a> -
+            <span class="block sm:inline">Placed on: <time datetime="{{ order.order_placed }}">
+                    {{ order.order_placed|date:"M d, Y H:i" }}</time></span> -
+            <span class="block sm:inline">Status:
+                <span
+                    class="inline-block px-2 py-1 rounded-full text-red-500 {% if order.status == 'Pending' %} bg-yellow-500 {% elif order.status == 'Processing' %} bg-blue-500 {% elif order.status == 'Shipped' %} bg-indigo-500 {% elif order.status == 'Delivered' %} bg-green-500 {% elif order.status == 'Cancelled' %} bg-red-500 {% endif %}">
+                    {{ order.get_status_display }}
+                </span>
+            </span>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
