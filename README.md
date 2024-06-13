@@ -1,4 +1,4 @@
-E-commerce Project
+# E-commerce Project
 
 This is a comprehensive e-commerce platform built with Django. The platform includes features such as user authentication, product listing, cart management, order processing, and payment integration.
 
@@ -12,6 +12,7 @@ This is a comprehensive e-commerce platform built with Django. The platform incl
 - [Running Tests](#running-tests)
 - [Contributing](#contributing)
 - [License](#license)
+- [Project Screenshots](#project-screenshots)
 
 ## Features
 
@@ -47,8 +48,8 @@ This is a comprehensive e-commerce platform built with Django. The platform incl
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/your-username/django-ecommerce.git
-    cd django-ecommerce
+    git clone https://github.com/YaminLamBappi/onlineshop
+    cd onlineshop
     ```
 
 2. **Create and activate a virtual environment:**
@@ -114,7 +115,7 @@ Create a `.env` file in the project root and add the following environment varia
 ```plaintext
 SECRET_KEY=your_secret_key
 DEBUG=True  # Set to False in production
-ALLOWED_HOSTS=localhost, 127.0.0.1, [your_domain]
+ALLOWED_HOSTS=localhost,127.0.0.1,[your_domain]
 DATABASE_URL=postgres://your_db_user:your_db_password@localhost/your_db_name
 STRIPE_SECRET_KEY=your_stripe_secret_key
 STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
@@ -145,13 +146,9 @@ Usage
 
     python manage.py runserver
 
-    Access the site:
+    Access the site: Open your browser and navigate to http://127.0.0.1:8000/.
 
-    Open your browser and navigate to http://127.0.0.1:8000/.
-
-    Access the admin panel:
-
-    Navigate to http://127.0.0.1:8000/admin and log in with the superuser credentials.
+    Access the admin panel: Navigate to http://127.0.0.1:8000/admin and log in with the superuser credentials.
 
 Running Tests
 
@@ -161,7 +158,7 @@ bash
 
 python manage.py test
 
-Contributing: Yamin Lam Bappi
+Contributing
 
 Contributions are welcome! Please follow these steps:
 
@@ -175,5 +172,22 @@ License
 
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
+# Project Screenshots
 
+## Screenshot 1
+![Project Screenshot 1](./Screenshot.png)
 
+## Screenshot 2
+![Project Screenshot 2](./Screenshot1.png)
+
+## Screenshot 3
+![Project Screenshot 3](./Screenshot2.png)
+
+## Screenshot 4
+![Project Screenshot 4](./Screenshot4.png)
+
+## Screenshot 5
+![Project Screenshot 5](./Screenshot5.png)
+
+## Screenshot 6
+![Project Screenshot 6](./Screenshot6.png)
