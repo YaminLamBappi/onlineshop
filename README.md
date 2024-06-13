@@ -48,8 +48,8 @@ This is a comprehensive e-commerce platform built with Django. The platform incl
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/your-username/django-ecommerce.git
-    cd django-ecommerce
+    git clone https://github.com/YaminLamBappi/onlineshop
+    cd onlineshop
     ```
 
 2. **Create and activate a virtual environment:**
@@ -171,22 +171,23 @@ Contributions are welcome! Please follow these steps:
 License
 
 This project is licensed under the MIT License. See the LICENSE file for more details.
-Project Screenshots
-Screenshot 1
 
-Project Screenshot 1
-Screenshot 2
+# Project Screenshots
 
-Project Screenshot 2
-Screenshot 3
+## Screenshot 1
+![Project Screenshot 1](./Screenshot%20from%202024-06-14%2003-06-12.png)
 
-Project Screenshot 3
-Screenshot 4
+## Screenshot 2
+![Project Screenshot 2](./Screenshot%20from%202024-06-14%2003-06-30.png)
 
-Project Screenshot 4
-Screenshot 5
+## Screenshot 3
+![Project Screenshot 3](./Screenshot%20from%202024-06-14%2003-06-49.png)
 
-Project Screenshot 5
-Screenshot 6
+## Screenshot 4
+![Project Screenshot 4](./Screenshot%20from%202024-06-14%2003-07-01.png)
 
-Project Screenshot 6
+## Screenshot 5
+![Project Screenshot 5](./Screenshot%20from%202024-06-14%2003-07-30.png)
+
+## Screenshot 6
+![Project Screenshot 6](./Screenshot%20from%202024-06-14%2003-07-38.png)
