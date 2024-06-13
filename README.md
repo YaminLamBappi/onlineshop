@@ -174,21 +174,25 @@ This project is licensed under the MIT License. See the LICENSE file for more de
 
 ## Project Screenshots
 
-## Screenshot 1
-![Project Screenshot 1](./media/project_image/Screenshot.png)
+<ul>
+  <li>Project Screenshot 1
+    <img src="./media/project_image/Screenshot.png" alt="Project Screenshot 1"><br><br>
+  </li>
+  <li>Project Screenshot 2
+    <img src="./media/project_image/Screenshot3.png" alt="Project Screenshot 2"><br><br>
+  </li>
+  <li>Project Screenshot 3
+    <img src="./media/project_image/Screenshot2.png" alt="Project Screenshot 3"><br><br>
+  </li>
+  <li>Project Screenshot 4
+    <img src="./media/project_image/Screenshot4.png" alt="Project Screenshot 4"><br><br>
+  </li>
+  <li>Project Screenshot 5
+    <img src="./media/project_image/Screenshot5.png" alt="Project Screenshot 5"><br><br>
+  </li>
+  <li>Project Screenshot 6
+    <img src="./media/project_image/Screenshot6.png" alt="Project Screenshot 6"><br><br>
+  </li>
+</ul>
 
-## Screenshot 2
-![Project Screenshot 2](./media/project_image/Screenshot1.png)
-
-## Screenshot 3
-![Project Screenshot 3](./media/project_image/Screenshot2.png)
-
-## Screenshot 4
-![Project Screenshot 4](./media/project_image/Screenshot4.png)
-
-## Screenshot 5
-![Project Screenshot 5](./media/project_image/Screenshot5.png)
-
-## Screenshot 6
-![Project Screenshot 6](./media/project_image/Screenshot6.png)
 ```
