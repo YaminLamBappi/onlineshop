@@ -176,22 +176,22 @@ This project is licensed under the MIT License. See the LICENSE file for more de
 
 <ul>
   <li>Project Screenshot 1
-    <img src="./media/project_image/Screenshot.png" alt="Project Screenshot 1"><br><br>
+    <img src="media/project_image/Screenshot.png" alt="Project Screenshot 1"><br><br>
   </li>
   <li>Project Screenshot 2
-    <img src="./media/project_image/Screenshot3.png" alt="Project Screenshot 2"><br><br>
+    <img src="media/project_image/Screenshot3.png" alt="Project Screenshot 2"><br><br>
   </li>
   <li>Project Screenshot 3
-    <img src="./media/project_image/Screenshot2.png" alt="Project Screenshot 3"><br><br>
+    <img src="media/project_image/Screenshot2.png" alt="Project Screenshot 3"><br><br>
   </li>
   <li>Project Screenshot 4
-    <img src="./media/project_image/Screenshot4.png" alt="Project Screenshot 4"><br><br>
+    <img src="media/project_image/Screenshot" alt="Project Screenshot 4"><br><br>
   </li>
   <li>Project Screenshot 5
-    <img src="./media/project_image/Screenshot5.png" alt="Project Screenshot 5"><br><br>
+    <img src="media/project_image/Screenshot5.png" alt="Project Screenshot 5"><br><br>
   </li>
   <li>Project Screenshot 6
-    <img src="./media/project_image/Screenshot6.png" alt="Project Screenshot 6"><br><br>
+    <img src="media/project_image/Screenshot6.png" alt="Project Screenshot 6"><br><br>
   </li>
 </ul>
 
