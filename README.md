@@ -50,71 +50,71 @@ This is a comprehensive e-commerce platform built with Django. The platform incl
    ```bash
    git clone https://github.com/YaminLamBappi/onlineshop
    cd onlineshop
+
+    Create and activate a virtual environment:
+
+    bash
    ```
 
-2. **Create and activate a virtual environment:**
+python -m venv env
+source env/bin/activate # On Windows use `env\Scripts\activate`
 
-   ```bash
-   python -m venv env
-   source env/bin/activate  # On Windows use `env\Scripts\activate`
-   ```
+Install the dependencies:
 
-3. **Install the dependencies:**
+bash
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+pip install -r requirements.txt
 
-4. **Install frontend dependencies (optional, if using npm):**
+Install frontend dependencies (optional, if using npm):
 
-   ```bash
-   npm install
-   ```
+bash
 
-5. **Set up the database:**
+npm install
 
-   Create a PostgreSQL database and configure the database settings in `settings.py`.
+Set up the database:
 
-   ```python
-   DATABASES = {
-       'default': {
-           'ENGINE': 'django.db.backends.postgresql',
-           'NAME': 'your_db_name',
-           'USER': 'your_db_user',
-           'PASSWORD': 'your_db_password',
-           'HOST': 'localhost',
-           'PORT': '5432',
-       }
-   }
-   ```
+Create a PostgreSQL database and configure the database settings in settings.py.
 
-6. **Run migrations:**
+python
 
-   ```bash
-   python manage.py migrate
-   ```
+DATABASES = {
+'default': {
+'ENGINE': 'django.db.backends.postgresql',
+'NAME': 'your_db_name',
+'USER': 'your_db_user',
+'PASSWORD': 'your_db_password',
+'HOST': 'localhost',
+'PORT': '5432',
+}
+}
 
-7. **Create a superuser:**
+Run migrations:
 
-   ```bash
-   python manage.py createsuperuser
-   ```
+bash
 
-8. **Collect static files:**
+python manage.py migrate
 
-   ```bash
-   python manage.py collectstatic
-   ```
+Create a superuser:
 
-## Configuration
+bash
 
-### Environment Variables
+python manage.py createsuperuser
 
-Create a `.env` file in the project root and add the following environment variables:
+Collect static files:
 
-```plaintext
+bash
+
+    python manage.py collectstatic
+
+Configuration
+Environment Variables
+
+Create a .env file in the project root and add the following environment variables:
+
+plaintext
+
 SECRET_KEY=your_secret_key
-DEBUG=True  # Set to False in production
+DEBUG=True # Set to False in production
 ALLOWED_HOSTS=localhost,127.0.0.1,[your_domain]
 DATABASE_URL=postgres://your_db_user:your_db_password@localhost/your_db_name
 STRIPE_SECRET_KEY=your_stripe_secret_key
@@ -126,7 +126,7 @@ EMAIL_USE_TLS=True
 EMAIL_HOST_USER=your_email@example.com
 EMAIL_HOST_PASSWORD=your_email_password
 
-Static Files
+Static Files Configuration
 
 Ensure that the STATIC_ROOT and MEDIA_ROOT settings are correctly configured in settings.py:
 
@@ -171,8 +171,7 @@ Contributions are welcome! Please follow these steps:
 License
 
 This project is licensed under the MIT License. See the LICENSE file for more details.
-
-## Project Screenshots
+Project Screenshots
 
 <ul>
   <li>Project Screenshot 1
@@ -185,7 +184,7 @@ This project is licensed under the MIT License. See the LICENSE file for more de
     <img src="media/project_image/Screenshot2.png" alt="Project Screenshot 3"><br><br>
   </li>
   <li>Project Screenshot 4
-    <img src="media/project_image/Screenshot" alt="Project Screenshot 4"><br><br>
+    <img src="media/project_image/Screenshot4.png" alt="Project Screenshot 4"><br><br>
   </li>
   <li>Project Screenshot 5
     <img src="media/project_image/Screenshot5.png" alt="Project Screenshot 5"><br><br>
@@ -194,5 +193,3 @@ This project is licensed under the MIT License. See the LICENSE file for more de
     <img src="media/project_image/Screenshot6.png" alt="Project Screenshot 6"><br><br>
   </li>
 </ul>
-
-```
