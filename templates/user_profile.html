@@ -8,58 +8,55 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link href="{% static 'css/main.css' %}" rel="stylesheet">
-
+    <link href="{% static 'css/profile.css' %}" rel="stylesheet">
 </head>
 
 <body>
     {% include 'header.html' %}
     {% block content %}
-    <div class="container mt-4">
-        <div class="profile-header">
-            <div class="d-flex align-items-center mb-4">
-                {% if user.profile_pic %}
-                <div class="profile-picture mr-4">
+    <main>
+        <div class="profile-container">
+            <div class="profile-card">
+                <div class="profile-picture">
+                    {% if user.profile_pic %}
                     <img src="{{ user.profile_pic.url }}" alt="Profile Picture">
+                    {% else %}
+                    <i class="fas fa-user-circle fa-5x"></i>
+                    {% endif %}
+                </div>
+                <div class="profile-info">
+                    <h2>{{ user.first_name }} {{ user.last_name }}</h2>
+                    <p>Email: {{ user.email }}</p>
+                    <p>Phone: {{ user.phone }}</p>
+                </div>
+                <div class="profile-bio">
+                    <h3>Address</h3>
+                    <p>{{ user.address }}</p>
+                    <p>{{ user.postal_code }}</p>
+                    <p>{{ user.city }}</p>
+                </div>
+                {% if not user.is_authenticated %}
+                <div class="not-logged-in-text">
+                    <p>You are not logged in</p>
+                    <a href="{% url 'login' %}" class="btn btn-primary">Log In</a>
                 </div>
                 {% else %}
-                <div class="profile-picture-placeholder mr-4">
-                    <!-- Placeholder image or icon -->
-                    <i class="fas fa-user-circle fa-5x"></i>
+                <div class="d-flex flex-column align-items-center">
+                    <a href="{% url 'edit_profile' %}" class="btn-edit-profile mb-2">Edit Profile</a>
+                    <a href="{% url 'order:order_history' %}" class="btn-update-password mb-2">Manage Orders</a>
+                    <a href="{% url 'change_password' %}" class="btn-update-password mb-2">Update Password</a>
+                    <a href="{% url 'logout' %}" class="btn-update-password mb-2">Logout</a>
+                    {% if user.is_staff %}
+                    <a href="{% url 'admin:index' %}" class="btn btn-warning mb-2">Admin Panel</a>
+                    {% endif %}
                 </div>
                 {% endif %}
-                <div>
-                    <h2 class="mb-1">{{ user.first_name }} {{ user.last_name }}</h2>
-                    <p class="text-muted mb-0">Email: {{ user.email }}</p>
-                    <p class="text-muted mb-0">Phone: {{ user.phone }}</p>
-                </div>
             </div>
-
         </div>
-        <div class="profile-body">
-            <div class="mb-4">
-                <h3 class="mb-2">Address</h3>
-                <p>{{ user.address }}</p>
-                <p>{{ user.postal_code }}</p>
-                <p>{{ user.city }}</p>
-            </div>
-            {% if not user.is_authenticated %}
-            <div class="text-center not-logged-in-text">
-                <p>You are not logged in</p>
-                <a href="{% url 'login' %}">Log In</a>
-            </div>
-            {% else %}
-            <div class="d-flex justify-content-between">
-                <a href="{% url 'edit_profile' %}" class="btn-edit-profile">Edit Profile</a>
-                <a href="{% url 'order:order_history' %}" class="btn-update-password">Manage Order</a>
-                <a href="{% url 'change_password' %}" class="btn-update-password">Update Password</a>
-                <a href="{% url 'logout' %}" class="btn-update-password">Logout</a>
-            </div>
-
-            {% endif %}
-        </div>
-    </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 My Profile. All rights reserved.</p>
+    </footer>
     {% endblock %}
 </body>
 

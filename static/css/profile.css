@@ -109,22 +109,33 @@ main {
   line-height: 1.5; /* Improve readability with line spacing */
 }
 
-.profile-card a {
+.profile-card a,
+button[type="submit"] {
   background-color: #007bff; /* Blue button */
   color: #fff;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: auto; /* Position button at bottom */
+  text-align: center;
+  display: inline-block;
+  margin-top: 10px;
 }
+
 button[type="submit"] {
   background-color: #4caf50;
-  color: white;
+}
+
+.not-logged-in-text a {
+  background-color: #007bff; /* Blue button */
+  color: #fff;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  text-align: center;
+  display: inline-block;
+  margin-top: 10px;
 }
 
 /* Footer styles */
