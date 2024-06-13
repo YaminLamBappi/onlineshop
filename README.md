@@ -47,64 +47,64 @@ This is a comprehensive e-commerce platform built with Django. The platform incl
 
 1. **Clone the repository:**
 
-    ```bash
-    git clone https://github.com/YaminLamBappi/onlineshop
-    cd onlineshop
-    ```
+   ```bash
+   git clone https://github.com/YaminLamBappi/onlineshop
+   cd onlineshop
+   ```
 
 2. **Create and activate a virtual environment:**
 
-    ```bash
-    python -m venv env
-    source env/bin/activate  # On Windows use `env\Scripts\activate`
-    ```
+   ```bash
+   python -m venv env
+   source env/bin/activate  # On Windows use `env\Scripts\activate`
+   ```
 
 3. **Install the dependencies:**
 
-    ```bash
-    pip install -r requirements.txt
-    ```
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 4. **Install frontend dependencies (optional, if using npm):**
 
-    ```bash
-    npm install
-    ```
+   ```bash
+   npm install
+   ```
 
 5. **Set up the database:**
 
-    Create a PostgreSQL database and configure the database settings in `settings.py`.
+   Create a PostgreSQL database and configure the database settings in `settings.py`.
 
-    ```python
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'your_db_name',
-            'USER': 'your_db_user',
-            'PASSWORD': 'your_db_password',
-            'HOST': 'localhost',
-            'PORT': '5432',
-        }
-    }
-    ```
+   ```python
+   DATABASES = {
+       'default': {
+           'ENGINE': 'django.db.backends.postgresql',
+           'NAME': 'your_db_name',
+           'USER': 'your_db_user',
+           'PASSWORD': 'your_db_password',
+           'HOST': 'localhost',
+           'PORT': '5432',
+       }
+   }
+   ```
 
 6. **Run migrations:**
 
-    ```bash
-    python manage.py migrate
-    ```
+   ```bash
+   python manage.py migrate
+   ```
 
 7. **Create a superuser:**
 
-    ```bash
-    python manage.py createsuperuser
-    ```
+   ```bash
+   python manage.py createsuperuser
+   ```
 
 8. **Collect static files:**
 
-    ```bash
-    python manage.py collectstatic
-    ```
+   ```bash
+   python manage.py collectstatic
+   ```
 
 ## Configuration
 
@@ -172,22 +172,23 @@ License
 
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
-# Project Screenshots
+## Project Screenshots
 
 ## Screenshot 1
-![Project Screenshot 1](./Screenshot.png)
+![Project Screenshot 1](./media/project_image/Screenshot.png)
 
 ## Screenshot 2
-![Project Screenshot 2](./Screenshot1.png)
+![Project Screenshot 2](./media/project_image/Screenshot1.png)
 
 ## Screenshot 3
-![Project Screenshot 3](./Screenshot2.png)
+![Project Screenshot 3](./media/project_image/Screenshot2.png)
 
 ## Screenshot 4
-![Project Screenshot 4](./Screenshot4.png)
+![Project Screenshot 4](./media/project_image/Screenshot4.png)
 
 ## Screenshot 5
-![Project Screenshot 5](./Screenshot5.png)
+![Project Screenshot 5](./media/project_image/Screenshot5.png)
 
 ## Screenshot 6
-![Project Screenshot 6](./Screenshot6.png)
+![Project Screenshot 6](./media/project_image/Screenshot6.png)
+```
