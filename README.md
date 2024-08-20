@@ -173,23 +173,12 @@ License
 This project is licensed under the MIT License. See the LICENSE file for more details.
 Project Screenshots
 
-<ul>
+
   <li>Project Screenshot 1
     <img src="media/project_image/Screenshot.png" alt="Project Screenshot 1"><br><br>
   </li>
-  <li>Project Screenshot 2
-    <img src="media/project_image/Screenshot3.png" alt="Project Screenshot 2"><br><br>
-  </li>
-  <li>Project Screenshot 3
-    <img src="media/project_image/Screenshot2.png" alt="Project Screenshot 3"><br><br>
-  </li>
-  <li>Project Screenshot 4
-    <img src="media/project_image/Screenshot4.png" alt="Project Screenshot 4"><br><br>
-  </li>
-  <li>Project Screenshot 5
-    <img src="media/project_image/Screenshot5.png" alt="Project Screenshot 5"><br><br>
-  </li>
-  <li>Project Screenshot 6
-    <img src="media/project_image/Screenshot6.png" alt="Project Screenshot 6"><br><br>
-  </li>
-</ul>
+  
+<video width="320" height="240" controls>
+  <source src="media/project_image/project_demo.webm" type="video/mp4">
+</video> 
+
