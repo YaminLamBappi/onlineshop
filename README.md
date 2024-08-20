@@ -174,14 +174,7 @@ This project is licensed under the MIT License. See the LICENSE file for more de
 Project Screenshots
 
 
-  <li>Project Screenshot 1
-    <img src="media/project_image/Screenshot.png" alt="Project Screenshot 1"><br><br>
-    <video width="320" height="240" controls>
-  <source src="media/project_image/project_demo.webm" type="video/mp4">
-</video> 
-  </li>
-  
-<video width="320" height="240" controls>
-  <source src="media/project_image/project_demo.webm" type="video/mp4">
-</video> 
 
+### Demo Video
+
+[![Watch the video](https://youtu.be/mIsq1vvw0d0)](https://youtu.be/mIsq1vvw0d0)
