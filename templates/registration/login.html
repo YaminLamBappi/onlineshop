@@ -6,17 +6,19 @@
 <head>
     <meta charset="utf-8">
     <title>OnlineShop</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    {% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.css' %}">
+
+    {% endblock %}
 </head>
 
 <body class="bg-gray-50">
-    <a href="{% url 'shop:product_list' %}">
-        <h2>Back</h2>
-    </a>
+
+    {% include 'header.html' %}
 
     {% block content %}
-    <div class="flex justify-center items-center h-screen">
+    <div class="flex justify-center items-center h-screen signin">
         <div class="max-w-sm w-full p-8 bg-white shadow-md rounded-md">
             <p>You are not logged in</p>
 
@@ -24,8 +26,7 @@
             <form method="post" class="space-y-4">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button type="submit"
-                    class="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md w-full">Log
+                <button type="submit" class="submit-button">Log
                     In</button>
             </form>
             <p class="mt-4 text-center text-gray-600">Don't have an account?

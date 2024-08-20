@@ -1,54 +1,50 @@
-.header {
-  background-color: #f9f9f9;
-  padding: 1rem;
-  border-bottom: 1px solid #ddd;
+* {
+  background-color: transparent !important;
 }
 
-.navbar {
-  padding: 0;
+/* Apply dark black color to all text elements */
+body, p, h1, h2, h3, h4, h5, h6, a, span, div, section, header, footer, nav, article, input, textarea, select, button, label, th, td {
+  color: #000000 !important; /* Dark black color */
 }
 
-.navbar-brand {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #333;
-  text-decoration: none;
+/* Overriding Bootstrap background colors */
+.bg-white, .bg-light, .bg-dark, .bg-primary, .bg-secondary, .bg-success, .bg-danger, .bg-warning, .bg-info,
+.table, .card, .navbar, .jumbotron, .modal-content {
+  background-color: transparent !important;
 }
 
-.navbar-nav {
-  margin-right: 1rem;
+.offcanvas {
+  background-color: #ffffff !important; /* Or any specific color you want for the off-canvas */
 }
 
-.nav-item {
-  margin-right: 1rem;
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-image: url('../images/gggg.jpg');
 }
 
-.nav-link {
-  color: #333;
-  text-decoration: none;
-  transition: color 0.2s ease;
+
+.navbar-scroll .nav-link,
+.navbar-scroll .navbar-toggler .fa-bars {
+  color: #000000;
 }
 
-.nav-link:hover {
-  color: #337ab7;
+/* Color of the links AFTER scroll */
+.navbar-scrolled .nav-link,
+.navbar-scrolled .navbar-toggler .fa-bars {
+  color: #4f4f4f;
 }
 
-.nav-link i {
-  font-size: 1.5rem;
-  margin-right: 0.5rem;
+/* Color of the navbar AFTER scroll */
+.navbar-scrolled {
+  background-color: #000000;
 }
 
-#cart-count {
-  font-size: 1rem;
-  font-weight: bold;
-  color: #337ab7;
-  padding: 0.2rem 0.5rem;
-  border-radius: 50%;
-  background-color: #fff;
-  border: 1px solid #ddd;
+/* An optional height of the navbar AFTER scroll */
+.navbar.navbar-scroll.navbar-scrolled {
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
-#cart-count:hover {
-  background-color: #337ab7;
-  color: #fff;
+.cart_span{
+  color: rgb(255, 0, 0);
 }

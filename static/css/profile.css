@@ -1,10 +1,37 @@
-/* Basic styles */
+
+* {
+  background-color: transparent !important;
+}
+
+/* Apply dark black color to all text elements */
+body, p, h1, h2, h3, h4, h5, h6, a, span, div, section, header, footer, nav, article, input, textarea, select, button, label, th, td {
+  color: #000000 !important; /* Dark black color */
+}
+
+/* Overriding Bootstrap background colors */
+.bg-white, .bg-light, .bg-dark, .bg-primary, .bg-secondary, .bg-success, .bg-danger, .bg-warning, .bg-info,
+.table, .card, .navbar, .jumbotron, .modal-content {
+  background-color: transparent !important;
+}
+
 body {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
 }
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
 
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
 a {
   text-decoration: none;
   color: #333;
@@ -15,33 +42,9 @@ img {
   height: auto;
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
   margin: 0;
   padding: 0;
-}
-
-/* Header styles */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  background-color: #f0f0f0;
-}
-
-header h1 {
-  font-size: 1.5em;
-}
-
-header nav {
-  display: flex;
-}
-
-header nav a {
-  padding: 10px 15px;
-  margin-right: 10px;
 }
 
 /* Main content styles */
@@ -49,6 +52,7 @@ main {
   padding: 50px 0;
 }
 
+/* Profile Page Specific Styles */
 .profile-container {
   margin: 0 auto;
   max-width: 700px; /* Adjust as needed */
@@ -110,21 +114,7 @@ main {
 }
 
 .profile-card a,
-button[type="submit"] {
-  background-color: #007bff; /* Blue button */
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  text-align: center;
-  display: inline-block;
-  margin-top: 10px;
-}
 
-button[type="submit"] {
-  background-color: #4caf50;
-}
 
 .not-logged-in-text a {
   background-color: #007bff; /* Blue button */

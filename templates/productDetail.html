@@ -1,78 +1,92 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ product.name }}</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{% static 'css/product_detail.css' %}">
 </head>
 
 <body>
     {% include 'header.html' %}
-    <div class="container">
+    <div class="container mt-5">
         <div class="row">
-            <div class="col-md-6 offset-md-3">
-                <div class="product-detail">
+            <!-- Product Image -->
+            <div class="col-md-8 mb-4">
+                <div class="product-image text-center">
                     {% if product.image %}
-
-                    <img src="{{ product.image.url }}" alt="{{ product.name }}" width="500" height="300"
-                        class="img-fluid">
-
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="img-fluid">
                     {% else %}
-
-                    <!-- Display a default image or a message indicating no image is available -->
-
-                    <img src="{% static 'no-image.png' %}" alt="No image available" width="500" height="300"
-                        class="img-fluid">
-
+                    <img src="{% static 'no-image.png' %}" alt="No image available" class="img-fluid">
                     {% endif %}
+                </div>
+            </div>
+
+            <!-- Product Details -->
+            <div class="col-md-4 mb-4">
+                <div class="product-details">
                     <h1>{{ product.name }}</h1>
-                    <p>{{ product.description }}</p>
                     <p>Price: ${{ product.price }}</p>
+
                     {% if product.available %}
-                    <p>Status: Available</p>
+                    <p class="text-success">Status: Available</p>
                     <form action="{% url 'cart:cart_add' product.id %}" method="post">
                         {% csrf_token %}
                         <input type="hidden" name="quantity" value="1">
                         <button type="submit" class="btn btn-primary">Add to Cart</button>
                     </form>
                     {% else %}
-                    <p>Status: Out of stock</p>
+                    <p class="text-danger">Status: Out of stock</p>
                     {% endif %}
+
                     {% if messages %}
-                    <ul class="messages">
+                    <ul class="messages list-unstyled mt-3">
                         {% for message in messages %}
-                        <li>{{ message }}</li>
+                        <li class="alert alert-info">{{ message }}</li>
                         {% endfor %}
                     </ul>
                     {% endif %}
                 </div>
-                <a href="{% url 'shop:product_list' %}" class="btn btn-secondary">Back to product list</a>
             </div>
         </div>
-        <div class="row">
+
+        <!-- Product Description Full Width -->
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <div class="product-description">
+                    <h2>Product Description</h2>
+                    <div class="description-content">
+                        {{ product.description|safe }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Products -->
+        <div class="row mt-5">
             <div class="col-md-12">
                 <h2>Related Products</h2>
                 <div class="related-products">
                     <div class="row">
                         {% for related_product in related_products %}
-                        <div class="col-md-3">
-                            <div class="card mb-4 shadow-sm">
+                        <div class="col-md-4 mb-4">
+                            <div class="card shadow-sm">
                                 {% if related_product.image %}
                                 <a href="{% url 'shop:product_detail' related_product.id related_product.slug %}">
                                     <img src="{{ related_product.image.url }}" alt="{{ related_product.name }}"
-                                        class="card-img-top" style="width: 100%; height: auto;">
+                                        class="card-img-top">
                                 </a>
                                 {% else %}
-                                <!-- Display a default image or a message indicating no image is available -->
                                 <a href="{% url 'shop:product_detail' related_product.id related_product.slug %}">
-                                    <img src="{% static 'no-image.png' %}" alt="No image available" class="card-img-top"
-                                        style="width: 100%; height: auto;">
+                                    <img src="{% static 'no-image.png' %}" alt="No image available"
+                                        class="card-img-top">
                                 </a>
                                 {% endif %}
                                 <div class="card-body">
@@ -89,6 +103,12 @@
             </div>
         </div>
     </div>
+
+    {% include 'footer.html' %}
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
 
 </html>

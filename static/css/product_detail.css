@@ -1,90 +1,68 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
+/* Product Description */
+
+* {
+  background-color: transparent !important;
 }
 
-.header {
-  background-color: #eaeaea;
-  color: #fff;
-  padding: 10px;
-  text-align: center;
+/* Apply dark black color to all text elements */
+body, p, h1, h2, h3, h4, h5, h6, a, span, div, section, header, footer, nav, article, input, textarea, select, button, label, th, td {
+  color: #000000 !important; /* Dark black color */
 }
 
-.header a {
-  color: #fff;
+/* Overriding Bootstrap background colors */
+.bg-white, .bg-light, .bg-dark, .bg-primary, .bg-secondary, .bg-success, .bg-danger, .bg-warning, .bg-info,
+.table, .card, .navbar, .jumbotron, .modal-content {
+  background-color: transparent !important;
+}
+
+.product-description {
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-description h2 {
+  font-size: 1.75rem;
+  margin-bottom: 20px;
+  font-weight: 500;
+  color: #333;
+}
+
+.description-content {
+  line-height: 1.8;
+  font-size: 1rem;
+  color: #333;
+}
+
+.description-content p {
+  margin-bottom: 1.5em;
+  text-align: justify;
+}
+
+.description-content ul, .description-content ol {
+  margin-bottom: 1.5em;
+}
+
+.description-content li {
+  margin-bottom: 0.5em;
+}
+
+.description-content h3,
+.description-content h4,
+.description-content h5,
+.description-content h6 {
+  margin-top: 1.5em;
+  margin-bottom: 1em;
+}
+
+.description-content a {
+  color: #007bff;
   text-decoration: none;
 }
 
-.header a:hover {
-  color: #ccc;
-}
-
-.product-detail {
-  padding: 20px;
-  border: 1px solid #ddd;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.product-detail img {
-  margin: 20px auto;
-  display: block;
-}
-
-.product-detail h1 {
-  font-size: 24px;
-  margin-top: 0;
-}
-
-.product-detail p {
-  margin-bottom: 20px;
-}
-
-.btn-primary {
-  background-color: #337ab7;
-  border-color: #337ab7;
-  color: #fff;
-}
-
-.btn-primary:hover {
-  background-color: #23527c;
-  border-color: #23527c;
-}
-
-.btn-secondary {
-  background-color: #666;
-  border-color: #666;
-  color: #fff;
-}
-
-.btn-secondary:hover {
-  background-color: #444;
-  border-color: #444;
-}
-
-.related-products {
-  margin-top: 40px;
-}
-
-.related-products .card {
-  border: none;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.related-products .card img {
-  height: 200px;
-  object-fit: cover;
-}
-
-.related-products .card-body {
-  padding: 10px;
-}
-
-.related-products .card-title {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.related-products .card-text {
-  font-size: 16px;
-  margin-bottom: 10px;
+.description-content a:hover {
+  text-decoration: underline;
 }

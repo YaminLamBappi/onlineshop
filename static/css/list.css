@@ -1,85 +1,126 @@
 body {
-  background-color: #f8f9fa;
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
-.categories {
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin-bottom: 20px;
-}
 
-.categories h2 {
-  font-size: 1.5rem;
-  color: #343a40;
-  margin-bottom: 15px;
-}
-
-.list-group-item {
-  border: none;
-}
-
-.list-group-item a {
-  color: #343a40;
-}
-
-.list-group-item a:hover {
-  color: #ffc107;
-  text-decoration: none;
-}
-
-.product-list {
-  margin-top: 20px;
-}
-
-.product {
-  margin-bottom: 20px;
+.carousel-inner img {
+  height: 400px; /* Adjust according to your preference */
+  object-fit: cover;
 }
 
 .card {
   border: none;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .card-img-top {
-  height: 200px;
+  height: 200px; /* Adjust according to your preference */
   object-fit: cover;
 }
 
+.card-body {
+  padding: 15px;
+}
+
 .card-title {
-  font-size: 1.2rem;
-  color: #343a40;
-  margin-bottom: 0.5rem;
+  font-weight: 700;
 }
 
-.card-text {
+.pagination {
+  margin-top: 20px;
+}
+
+.btn-outline-secondary {
+  border-color: #6c757d;
   color: #6c757d;
-  margin-bottom: 0.5rem;
 }
 
-.btn-primary {
-  background-color: #ffc107;
-  border: none;
-  color: #343a40;
-  transition: background-color 0.3s ease;
+.btn-outline-secondary:hover {
+  background-color: #6c757d;
+  color: #fff;
 }
 
-.btn-primary:hover {
-  background-color: #ffca2c;
-  color: #343a40;
+.text-center {
+  text-align: center;
 }
 
-.text-success {
-  color: #28a745;
+.shadow-sm {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+.card:hover {
+  transform: scale(1.05); /* Slightly increase the size */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Enhance the shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.text-danger {
-  color: #dc3545;
+.card-img-top {
+  transition: transform 0.3s ease; /* Smooth transition for the image */
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.1); /* Scale up the image on hover */
+}
+
+.featured {
+  margin: 20px; /* Apply a margin of 20px on all sides */
+}
+
+.my-5 {
+  margin-top: 3rem !important;
+  margin-bottom: 3rem !important;
+}
+* {
+  background-color: transparent !important;
+}
+.offer-section {
+  padding: 20px;
+  color: #fff !important;
+  background-image: url('../images/gggg.jpg');
+  background-size: cover; /* Ensure the background covers the entire div */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  position: relative; /* Positioning context for the overlay */
+  color: white;
+  padding: 4rem;
+  border-radius: 0.5rem;
+}
+
+.offer-section h3, .offer-section p {
+  position: relative; /* Ensure the text appears above the image */
+  z-index: 2;
+}
+
+.offer-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Add a dark overlay to enhance text readability */
+  border-radius: inherit;
+  z-index: 1;
+}
+
+.offer-section .btn {
+  position: relative;
+  z-index: 2;
+  margin-top: 1rem;
+}
+
+.offer-section:hover {
+  transform: scale(1.02); /* Slightly enlarge the section on hover */
+  transition: transform 0.3s ease;
+}
+
+/* Apply dark black color to all text elements */
+body, p, h1, h2, h3, h4, h5, h6, a, span, div, section, header, footer, nav, article, input, textarea, select, button, label, th, td {
+  color: #000000 !important; /* Dark black color */
+}
+
+/* Overriding Bootstrap background colors */
+.bg-white, .bg-light, .bg-dark, .bg-primary, .bg-secondary, .bg-success, .bg-danger, .bg-warning, .bg-info,
+.table, .card, .navbar, .jumbotron, .modal-content {
+  background-color: transparent !important;
 }

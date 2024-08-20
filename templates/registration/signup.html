@@ -1,41 +1,55 @@
 {% extends 'registration/login.html' %}
 {% load static %}
 
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/signup.css' %}">
+<link rel="stylesheet" href="{% static 'bootstrap/bootstrap.css' %}">
+
+{% endblock %}
+
 {% block content %}
 
-<body class="bg-gray-100">
-    <div class="container mx-auto py-8">
-        <div class="max-w-md mx-auto bg-white shadow-md rounded-md p-6">
-            <h2 class="text-2xl font-bold text-center mb-6">Register</h2>
+<body class="bg-light">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h2 class="card-title text-center mb-4">Register</h2>
 
-            {% if form.errors %}
-            <div class="alert alert-danger" role="alert">
-                <strong>Oops!</strong> There was an error while processing your registration.
-                <ul>
-                    {% for field, errors in form.errors.items %}
-                    {% for error in errors %}
-                    <li>{{ error }}</li>
-                    {% endfor %}
-                    {% endfor %}
-                </ul>
-            </div>
-            {% endif %}
+                        {% if form.errors %}
+                        <div class="alert alert-danger" role="alert">
+                            <strong>Oops!</strong> There was an error while processing your registration.
+                            <ul>
+                                {% for field, errors in form.errors.items %}
+                                {% for error in errors %}
+                                <li>{{ error }}</li>
+                                {% endfor %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% endif %}
 
-            <form method="post" enctype="multipart/form-data">
-                {% csrf_token %}
-                {% for field in form %}
-                <div class="mb-4">
-                    <label for="{{ field.id_for_label }}" class="block text-sm font-medium text-gray-700">
-                        {{ field.label }}</label>
-                    {{ field }}
+
+                        <form method="post" enctype="multipart/form-data space-y-4">
+                            {% csrf_token %}
+                            {% for field in form %}
+                            <div class="mb-3">
+                                <label for="{{ field.id_for_label }}" class="form-label">
+                                    {{ field.label }}
+                                </label>
+                                {{ field }}
+                            </div>
+                            {% endfor %}
+
+                            <button type="submit" class="btn btn-primary btn-block">Register</button>
+                            <p class="text-center text-muted mt-3">Already have an account?
+                                <a href="{% url 'login' %}" class="text-primary">Sign in Now</a>
+                            </p>
+                        </form>
+                    </div>
                 </div>
-                {% endfor %}
-
-                <button type="submit"
-                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-full">Register</button>
-                <p class="text-center text-gray-600 mt-4">Already have an account? <a href="{% url 'login' %}"
-                        class="text-blue-500 hover:text-blue-700">Sign in Now</a></p>
-            </form>
+            </div>
         </div>
     </div>
 </body>
