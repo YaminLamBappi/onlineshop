@@ -177,4 +177,4 @@ Project Screenshots
 
 ### Demo Video
 
-[![Watch the video](https://youtu.be/-L-wCTXnogM)
+[![Watch the video](https://youtu.be/-L-wCTXnogM)]
