@@ -7,11 +7,6 @@ body, p, h1, h2, h3, h4, h5, h6, a, span, div, section, header, footer, nav, art
   color: #000000 !important; /* Dark black color */
 }
 
-/* Overriding Bootstrap background colors */
-.bg-white, .bg-light, .bg-dark, .bg-primary, .bg-secondary, .bg-success, .bg-danger, .bg-warning, .bg-info,
-.table, .card, .navbar, .jumbotron, .modal-content {
-  background-color: transparent !important;
-}
 
 
 body {

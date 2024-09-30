@@ -73,7 +73,7 @@ main {
   margin-bottom: 20px;
   width: 150px; /* Adjust image size as needed */
   height: 150px;
-  border-radius: 50%; /* Circular profile picture */
+  border-radius: 100%; /* Circular profile picture */
   overflow: hidden; /* Crop image if necessary */
 }
 
